@@ -17,9 +17,9 @@ const Secervice = ({ secvice }) => {
                     <div className="card-actions justify-end">
                         {
                             quantity > 0 ?
-                                <button class="btn btn-outline btn-success">Book Now</button>
+                                <button className="btn btn-outline btn-success">Book Now</button>
                                 :
-                                <button class="btn btn-outline disabled btn-success">Not abailabe</button>
+                                <button className="btn btn-outline disabled btn-success">Not abailabe</button>
 
                         }
 

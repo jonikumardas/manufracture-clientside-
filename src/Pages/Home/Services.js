@@ -11,7 +11,7 @@ const Services = () => {
     return (
         <div>
             <hr />
-            <p className='text-amber-500 text-4xl text-center p-4 font-bold'>Our Best Service</p>
+            <p className='text-amber-500 text-4xl text-center p-4 font-bold'>Our Exclusive tools Service</p>
             <div className=' grid grid-cols-1 lg:grid-cols-3 gap-4'>
                 {
                     secvices.map(secvice => <Secervice key={secvice._id}
@@ -19,7 +19,7 @@ const Services = () => {
                     ></Secervice>)
                 }
             </div>
-            <p className='text-center btn-outline btn-success'><Link to="/service">To see more ..... </Link></p>
+            <p className='text-center btn-outline btn-success'><Link to="/service my-5">To see more ..... </Link></p>
 
 
         </div>
