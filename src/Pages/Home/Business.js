@@ -37,7 +37,7 @@ const Business = () => {
         }
     ]
     return (
-        <div className='bg-blend-soft-light backdrop-blur-3xl' style={{
+        <div className='bg-blend-soft-light backdrop-blur-3xl py-5' style={{
             background: `url(${bg})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'

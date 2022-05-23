@@ -23,10 +23,10 @@ const Banner = () => {
             <div>
                 <div className="carousel w-full">
                     <div id="item1" className="carousel-item w-full">
-                        <img src={image1} alt='' className="w-full" />
+                        <img src={image2} alt='' className="w-full" />
                     </div>
                     <div id="item2" className="carousel-item w-full">
-                        <img src={image2} alt="" className="w-full" />
+                        <img src={image1} alt="" className="w-full" />
                     </div>
                     <div id="item3" className="carousel-item w-full">
                         <img src={image3} alt="" className="w-full" />
