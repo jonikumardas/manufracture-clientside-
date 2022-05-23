@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Secervice = ({ secvice }) => {
-    const { name, image, balance, about, quantity } = secvice;
+const SingleService = ({ service }) => {
+    const { name, image, about, quantity, balance, company } = service;
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl">
@@ -14,6 +14,7 @@ const Secervice = ({ secvice }) => {
                     <p>{about}</p>
                     <p className='text-amber-500'> Price :<span className='text-lime-600'> {balance}</span></p>
                     <p className='text-amber-500'>Available Quantity :<span className='text-lime-600'>{quantity}</span> </p>
+                    <p className='text-amber-500'>Available Quantity :<span className='text-lime-600'>{company}</span> </p>
                     <div className="card-actions justify-end">
                         {
                             quantity > 0 ?
@@ -30,4 +31,4 @@ const Secervice = ({ secvice }) => {
     );
 };
 
-export default Secervice;
+export default SingleService;

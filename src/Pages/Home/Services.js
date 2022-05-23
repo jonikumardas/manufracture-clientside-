@@ -19,7 +19,7 @@ const Services = () => {
                     ></Secervice>)
                 }
             </div>
-            <p className='text-center btn-outline btn-success pb-2'><Link to="/service my-5">To see more ..... </Link></p>
+            <p className='text-center btn-outline btn-success pb-2 my-5'><Link to="/services">To see more ..... </Link></p>
 
             <hr />
 
