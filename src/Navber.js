@@ -20,7 +20,7 @@ const Navber = () => {
                             </NavLink>
                         </li>
                         <li><NavLink to='/order' >Order</NavLink ></li>
-                        <li><NavLink to='/payment' >Payment</NavLink ></li>
+                        <li><NavLink to='/payment'>Payment</NavLink ></li>
                         <li><NavLink to='/blog'>Blog</NavLink ></li>
                         <li><NavLink to='/about'>About</NavLink ></li>
                         <li><NavLink to='/logIn'>LogIn</NavLink ></li>

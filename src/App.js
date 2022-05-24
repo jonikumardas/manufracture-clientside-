@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Navber from "./Navber";
 import LogIn from "./Pages/Autintication/LogIn";
 import Registation from "./Pages/Autintication/Registation";
@@ -23,6 +24,7 @@ function App() {
         <Route path='/registation' element={<Registation></Registation>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
