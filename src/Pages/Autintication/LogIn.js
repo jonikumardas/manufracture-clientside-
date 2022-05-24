@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import goog from '../../assats/google.png'
 import git from '../../assats/github.png'
-import { Link } from 'react-router-dom';
-import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle, useUpdatePassword } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../Firebase/Firebase.init';
+import { async } from '@firebase/util';
 
 const LogIn = () => {
     const [email, setEmail] = useState('');
@@ -24,6 +25,13 @@ const LogIn = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const [signInWithGithub, gituser, gitloading, giterror] = useSignInWithGithub(auth);
+    const [updatePassword, updating, updateerror] = useUpdatePassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [userall, loadingall, allerror] = useAuthState(auth);
+    console.log(userall);
+
+    let from = location.state?.from?.pathname || "/";
 
     const signIn = e => {
         e.preventDefault();
@@ -37,12 +45,24 @@ const LogIn = () => {
         signInWithGithub()
 
     }
-    if (user || guser || gituser) {
-        return toast.success("log in successful");
-    }
-    if (error || gerror || giterror)
-        return toast.error("somthing is wrong");
+    const resetPassword = async e => {
+        e.preventDefault();
+        await updatePassword(email)
+        alert(" updateed ")
 
+    }
+    if (user || guser || gituser || userall) {
+        toast.success("log in success");
+        return navigate(from, { replace: true });
+
+
+    }
+    if (error || gerror || giterror) {
+        return toast.error("somthing is wrong");
+    }
+    if (loading || gloading || gitloading) {
+        toast.loading(" loading")
+    }
 
 
     return (
@@ -58,7 +78,7 @@ const LogIn = () => {
                         <input
                             onBlur={handlepassword}
                             type="password" placeholder=" Enter password " className="input input-bordered input-success w-full max-w-xs" required ></input> <br />
-                        <button className='text-success'> Forget password ?</button>
+                        <button onClick={resetPassword} className='text-success'> Forget password ?</button>
                         <div className="card-actions w-full justify-center mt-3">
                             <button type='submit' className="btn btn-outline btn-success uppercase px-6"> Log In </button>
                         </div>
