@@ -16,10 +16,10 @@ const Secervice = ({ secvice, setOrder }) => {
                     <p className='text-amber-500'>Available stooked Quantity :<span className='text-lime-600'>{quantity}</span> </p>
                     <div className="card-actions justify-end">
                         <label
-                            for="ordermodal"
+                            htmlFor="ordermodal"
                             disabled={quantity === 0}
                             onClick={() => setOrder(secvice)}
-                            class="btn btn-outline btn-success">Book Now
+                            className="btn btn-outline btn-success">Book Now
                         </label>
                     </div>
                 </div>

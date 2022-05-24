@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleService = ({ service }) => {
+const SingleService = ({ service, setOrder }) => {
     const { name, image, about, quantity, balance, company } = service;
     return (
         <div>
@@ -17,18 +17,12 @@ const SingleService = ({ service }) => {
                     <p className='text-amber-500'>Company name :<span className='text-lime-600'>{company}</span> </p>
                     <div className="card-actions justify-end">
 
-                        <button
+                        <label
+                            htmlFor="ordermodal"
                             disabled={quantity === 0}
-                            className="btn btn-outline btn-success">Book Now</button>
-
-                        {/* {
-                            quantity > 0 ?
-                                <button className="btn btn-outline btn-success">Book Now</button>
-                                :
-                                <button className="btn btn-outline btn-disabled btn-success">Not abailabe</button>
-
-                        } */}
-
+                            onClick={() => setOrder(service)}
+                            className="btn btn-outline btn-success">Book Now
+                        </label>
                     </div>
                 </div>
             </div>
