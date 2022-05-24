@@ -7,7 +7,7 @@ const LogIn = () => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-2">
+            <div className="card sm:w-94 lg:w-96 bg-base-100 shadow-xl mx-auto mt-2">
                 <div className="card-body">
                     <h2 className="text-center text-3xl text-success my-5 font-bold ">Log In</h2>
                     <form>

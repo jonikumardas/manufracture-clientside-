@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import goog from '../../assats/google.png'
 import git from '../../assats/github.png'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +17,8 @@ const Registation = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    const [signInWithGithub, gituser, gitloading, giterror] = useSignInWithGithub(auth);
 
     const takemail = e => {
         setEmail(e.target.value);
@@ -38,13 +39,21 @@ const Registation = () => {
         }
 
     }
-    if (user) {
-        return toast.success("Account created successs!")
+    const signInGoogle = () => {
+        signInWithGoogle();
+
     }
-    if (loading) {
+    const githubSignIn = () => {
+        signInWithGithub()
+
+    }
+    if (user || guser || gituser) {
+        return toast.success("Account created successful!")
+    }
+    if (loading || gloading || gitloading) {
         return toast.loading("process loading")
     }
-    if (error) {
+    if (error || gerror || giterror) {
         return toast.error("somthing is wrong");
     }
     return (
@@ -65,11 +74,12 @@ const Registation = () => {
                     </form>
                     <p className='text-1xl'>Already have acount? <Link to='/login'><span className='text-success'> please log in</span></Link> </p>
                     <div className="divider">OR</div>
-                    <button className="btn btn-outline btn-success"><img src={goog} width="45px" alt="" /> sign in with google</button>
-                    <button className="btn btn-outline btn-success"><img src={git} width="45px" alt="" />sign in with github</button>
+                    <button onClick={signInGoogle} className="btn btn-outline btn-success"><img src={goog} width="45px" alt="" /> sign in with google</button>
+                    <button onClick={githubSignIn} className="btn btn-outline btn-success"><img src={git} width="45px" alt="" />sign in with github</button>
                 </div>
+                <ToastContainer />
             </div>
-            <ToastContainer />
+
 
 
         </div>

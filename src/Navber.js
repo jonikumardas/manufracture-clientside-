@@ -1,7 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from './Firebase/Firebase.init';
 
 const Navber = () => {
+    const [user, loading, error] = useAuthState(auth);
+    console.log(user);
+    const logOut = () => {
+        signOut(auth);
+    }
     return (
         <div className="navbar px-12 border-x-5 shadow">
             <div className="navbar-start ">
@@ -23,7 +31,11 @@ const Navber = () => {
                         <li><NavLink to='/payment'>Payment</NavLink ></li>
                         <li><NavLink to='/blog'>Blog</NavLink ></li>
                         <li><NavLink to='/about'>About</NavLink ></li>
-                        <li><NavLink to='/logIn'>LogIn</NavLink ></li>
+                        {
+                            user ?
+                                <li><NavLink to='/logIn' onClick={logOut}>SignOut</NavLink ></li> : <li><NavLink to='/logIn'>LogIn</NavLink ></li>
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -41,7 +53,12 @@ const Navber = () => {
                     <li><NavLink to='/payment' >Payment</NavLink ></li>
                     <li><NavLink to='/blog' >Blog</NavLink ></li>
                     <li><NavLink to='/about' >About</NavLink ></li>
-                    <li><NavLink to='/logIn'>LogIn</NavLink ></li>
+                    {
+                        user ?
+                            <li><NavLink to='/logIn' onClick={logOut}>SignOut</NavLink ></li> :
+                            <li><NavLink to='/logIn'>LogIn</NavLink ></li>
+                    }
+
                 </ul>
             </div>
         </div>
