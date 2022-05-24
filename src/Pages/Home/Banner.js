@@ -16,7 +16,7 @@ const Banner = () => {
                     We are providing best client services and We are the number one motors manufractuar company in the world.
                     we are wholeseller we are buying Our motors parts packege ways. If you want to know  about more details .
                 </p>
-                <button className="btn btn-outline btn-success"><Link to="/about">Explore now</Link></button>
+                <button className="btn btn-outline btn-success"><Link to="/services">Explore now</Link></button>
 
 
             </div>

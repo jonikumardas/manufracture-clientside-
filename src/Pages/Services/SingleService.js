@@ -14,15 +14,20 @@ const SingleService = ({ service }) => {
                     <p>{about}</p>
                     <p className='text-amber-500'> Price :<span className='text-lime-600'> {balance}</span></p>
                     <p className='text-amber-500'>Available Quantity :<span className='text-lime-600'>{quantity}</span> </p>
-                    <p className='text-amber-500'>Available Quantity :<span className='text-lime-600'>{company}</span> </p>
+                    <p className='text-amber-500'>Company name :<span className='text-lime-600'>{company}</span> </p>
                     <div className="card-actions justify-end">
-                        {
+
+                        <button
+                            disabled={quantity === 0}
+                            className="btn btn-outline btn-success">Book Now</button>
+
+                        {/* {
                             quantity > 0 ?
                                 <button className="btn btn-outline btn-success">Book Now</button>
                                 :
                                 <button className="btn btn-outline btn-disabled btn-success">Not abailabe</button>
 
-                        }
+                        } */}
 
                     </div>
                 </div>

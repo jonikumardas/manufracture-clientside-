@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Secervice = ({ secvice }) => {
+const Secervice = ({ secvice, setOrder }) => {
     const { name, image, balance, about, quantity } = secvice;
     return (
         <div>
@@ -13,16 +13,14 @@ const Secervice = ({ secvice }) => {
                     <p>Description:</p>
                     <p>{about}</p>
                     <p className='text-amber-500'> Price :<span className='text-lime-600'> {balance}</span></p>
-                    <p className='text-amber-500'>Available Quantity :<span className='text-lime-600'>{quantity}</span> </p>
+                    <p className='text-amber-500'>Available stooked Quantity :<span className='text-lime-600'>{quantity}</span> </p>
                     <div className="card-actions justify-end">
-                        {
-                            quantity > 0 ?
-                                <button className="btn btn-outline btn-success">Book Now</button>
-                                :
-                                <button className="btn btn-outline btn-disabled btn-success">Not abailabe</button>
-
-                        }
-
+                        <label
+                            for="ordermodal"
+                            disabled={quantity === 0}
+                            onClick={() => setOrder(secvice)}
+                            class="btn btn-outline btn-success">Book Now
+                        </label>
                     </div>
                 </div>
             </div>

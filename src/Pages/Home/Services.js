@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hooks from '../Hooks/Hooks';
+import OrderModal from './OrderModal';
 import Secervice from './Secervice';
 const Services = () => {
     const [secvices] = Hooks();
-    // console.log(secvices);
+    const [order, setOrder] = useState(null);
     if (secvices) {
         secvices.length = 6;
     }
+    console.log(order);
     return (
         <div>
             <hr />
@@ -16,13 +18,20 @@ const Services = () => {
                 {
                     secvices.map(secvice => <Secervice key={secvice._id}
                         secvice={secvice}
+                        setOrder={setOrder}
                     ></Secervice>)
                 }
             </div>
-            <p className='text-center btn-outline btn-success pb-2 my-5'><Link to="/services">To see more ..... </Link></p>
+            <p className='text-center btn-outline btn-success pb-2 my-5 font-bold'><Link to="/services">To see more ..... </Link></p>
 
             <hr />
-
+            {
+                order && <OrderModal
+                    order={order}
+                    setOrder={setOrder}
+                >
+                </OrderModal>
+            }
         </div>
     );
 };
