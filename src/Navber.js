@@ -6,7 +6,7 @@ import auth from './Firebase/Firebase.init';
 
 const Navber = () => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user);
+    // console.log(user);
     const logOut = () => {
         signOut(auth);
     }
@@ -33,7 +33,7 @@ const Navber = () => {
                         <li><NavLink to='/about'>About</NavLink ></li>
                         {
                             user ?
-                                <li><NavLink to='/logIn' onClick={logOut}>SignOut</NavLink ></li> : <li><NavLink to='/logIn'>LogIn</NavLink ></li>
+                                <li><NavLink to='/signout' onClick={logOut}>SignOut</NavLink ></li> : <li><NavLink to='/logIn'>LogIn</NavLink ></li>
                         }
 
                     </ul>
