@@ -8,7 +8,7 @@ import Services from "./Pages/Services/Services";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-800">
       <Navber></Navber>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

@@ -4,8 +4,8 @@ module.exports = {
     themes: [
       {
         light: {
-          "primary": "#67e8f9",
-          "secondary": "#374151",
+          "primary": "#22c55e",
+          "secondary": "#22d3ee",
           "accent": "#4338ca",
           "neutral": "#c4b5fd",
           "base-100": "#f3f4f6",
