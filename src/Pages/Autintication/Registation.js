@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import goog from '../../assats/google.png'
 import git from '../../assats/github.png'
-import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,6 +19,11 @@ const Registation = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const [signInWithGithub, gituser, gitloading, giterror] = useSignInWithGithub(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [userall, loadingall, allerror] = useAuthState(auth);
+    let from = location.state?.from?.pathname || "/";
+
 
     const takemail = e => {
         setEmail(e.target.value);
@@ -50,11 +55,12 @@ const Registation = () => {
     if (user || guser || gituser) {
         return toast.success("Account created successful!")
     }
-    if (loading || gloading || gitloading) {
-        return toast.loading("process loading")
-    }
+
     if (error || gerror || giterror) {
         return toast.error("somthing is wrong");
+    }
+    if (userall) {
+        return navigate(from, { replace: true });
     }
     return (
         <div>
