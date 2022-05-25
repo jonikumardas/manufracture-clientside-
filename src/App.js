@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import Navber from "./Navber";
 import LogIn from "./Pages/Autintication/LogIn";
 import Registation from "./Pages/Autintication/Registation";
+import Blog from "./Pages/Blog/Blog";
 import Deshboard from "./Pages/Deshboard/Deshboard";
 import Myorders from "./Pages/Deshboard/Myorders";
 import Home from "./Pages/Home/Home";
@@ -39,14 +40,7 @@ function App() {
         </Route>
 
 
-        {/* <Route path="/deshboard" element={
-          <RequerAuth>
-            <Deshboard></Deshboard>
-            
-          </RequerAuth>
-        }></Route> */}
-
-
+        {<Route path="/blog" element={<Blog></Blog>}></Route>}
 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route>
         <Route path='/registation' element={<Registation></Registation>}></Route>
