@@ -11,6 +11,7 @@ const Registation = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repassword, setRepassword] = useState('');
+    // const [name, setName] = useState('')
     const [
         createUserWithEmailAndPassword,
         user,
@@ -24,7 +25,9 @@ const Registation = () => {
     const [userall, loadingall, allerror] = useAuthState(auth);
     let from = location.state?.from?.pathname || "/";
 
-
+    // const takeName = e => {
+    //     setName(e.target.value)
+    // }
     const takemail = e => {
         setEmail(e.target.value);
     }
@@ -53,7 +56,8 @@ const Registation = () => {
 
     }
     if (user || guser || gituser) {
-        return toast.success("Account created successful!")
+        return toast.success("Account created successful!");
+
     }
 
     if (error || gerror || giterror) {
@@ -62,12 +66,15 @@ const Registation = () => {
     if (userall) {
         return navigate(from, { replace: true });
     }
+
     return (
         <div>
             <div className="card sm:w-94 lg:w-96 bg-base-100 shadow-xl mx-auto mt-2 ">
                 <div className="card-body">
                     <h2 className="text-center text-3xl text-success my-5 font-bold ">Register Now</h2>
                     <form onSubmit={hanldeSubmit}>
+                        <p className='text-1xl'>Name </p>
+                        <input type="text" name='email' placeholder="Enter name " className="input input-bordered input-success w-full max-w-xs my-2 " required /> <br />
                         <p className='text-1xl'>Email </p>
                         <input onBlur={takemail} type="email" name='email' placeholder="Enter email " className="input input-bordered input-success w-full max-w-xs my-2 " required /> <br />
                         <p className='text-1xl'>Password </p>

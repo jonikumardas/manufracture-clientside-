@@ -1,11 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Deshboard = () => {
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer mt-5 rounded-md drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content flex flex-col ">
                 <label for="my-drawer-2" className="btn btn-sm btn-outline btn-goust absolute right-2 top-2 fixed-top lg:hidden">Deshboard</label>
                 <Outlet></Outlet>
 
@@ -22,10 +22,12 @@ const Deshboard = () => {
                         </div>
                         <p className='font-bold text-success'>My Profile </p>
                     </li>
-                    <li><a>Your order</a></li>
-                    <li><a>Create admin</a></li>
-                    <li><a> All client </a></li>
-                    <li><a>Add product</a></li>
+                    <li><Link to="deshborad/orders" >My order</Link ></li>
+                    <li><Link to="deshborad/createadmin" >Create admin</Link ></li>
+                    <li><Link to="deshborad/allClient"> All client </Link ></li>
+                    <li><Link to="deshborad/addproduct" >Add product</Link ></li>
+                    <li><Link to="deshborad/revews" >My revews</Link ></li>
+                    <li><Link to="deshborad/history" >History</Link ></li>
                 </ul>
 
             </div>

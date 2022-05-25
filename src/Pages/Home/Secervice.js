@@ -12,7 +12,7 @@ const Secervice = ({ secvice, setOrder }) => {
                     </h2>
                     <p>Description:</p>
                     <p>{about}</p>
-                    <p className='text-amber-500'> Price :<span className='text-lime-600'> {balance}</span></p>
+                    <p className='text-amber-500'> Price :<span className='text-lime-600'> ${balance}</span></p>
                     <p className='text-amber-500'>Available stooked Quantity :<span className='text-lime-600'>{quantity}</span> </p>
                     <div className="card-actions justify-end">
                         <label

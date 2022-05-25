@@ -7,7 +7,7 @@ const Services = () => {
     const [secvices] = Hooks();
     const [order, setOrder] = useState(null);
     if (secvices) {
-        secvices.length = 6;
+        secvices.length = 3;
     }
     console.log(order);
     return (
