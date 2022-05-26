@@ -8,6 +8,7 @@ import Deshboard from "./Pages/Deshboard/Deshboard";
 import Myorders from "./Pages/Deshboard/Myorders";
 import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
+import Orders from "./Pages/Orders/Orders";
 import Services from "./Pages/Services/Services";
 import AdminRoute from "./PrivateAuth.js/AdminRoute";
 import RequerAuth from "./PrivateAuth.js/RequerAuth";
@@ -22,7 +23,7 @@ function App() {
         <Route path='/services' element={<Services></Services>}></Route>
 
         <Route path='/order' element={<RequerAuth>
-          <h1>this is order</h1>
+          <Orders></Orders>
         </RequerAuth>}></Route>
         {/* deshbord  start here */}
 

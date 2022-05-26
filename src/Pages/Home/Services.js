@@ -9,7 +9,6 @@ const Services = () => {
     if (secvices) {
         secvices.length = 3;
     }
-    console.log(order);
     return (
         <div>
             <hr />
