@@ -10,8 +10,9 @@ import Home from "./Pages/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import Orders from "./Pages/Orders/Orders";
 import Services from "./Pages/Services/Services";
-import AdminRoute from "./PrivateAuth.js/AdminRoute";
 import RequerAuth from "./PrivateAuth.js/RequerAuth";
+import Myorder from "../src/Pages/Deshboard/Myorder"
+import Myrevew from "./Pages/Deshboard/Myrevew";
 
 function App() {
   return (
@@ -28,16 +29,16 @@ function App() {
         {/* deshbord  start here */}
 
         <Route path="deshborad" element={<RequerAuth>
-          <Deshboard></Deshboard>
+          <Deshboard>My profile  </Deshboard>
         </RequerAuth>
         }>
           <Route index element={<Myorders></Myorders>}></Route>
-          <Route path="deshborad/orders" element={<Myorders></Myorders>}></Route>
+          <Route path="deshborad/orders" element={<Myorder></Myorder>}></Route>
           <Route path="deshborad/createadmin" element={<Myorders></Myorders>}></Route>
           <Route path="deshborad/allClient" element={<Myorders></Myorders>}></Route>
           <Route path="deshborad/addproduct" element={<Myorders></Myorders>}></Route>
-          <Route path="deshborad/revews" element={<Myorders></Myorders>}></Route>
-          <Route path="deshborad/history" element={<Myorders></Myorders>}></Route>
+          <Route path="deshborad/revews" element={<Myrevew></Myrevew>}></Route>
+          <Route path="deshborad/history" element={<Myorder></Myorder>}></Route>
         </Route>
 
 
@@ -54,23 +55,3 @@ function App() {
 
 export default App;
 
-/* <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
-          <Route index element={<MyAppointments></MyAppointments>}></Route>
-          <Route path="review" element={<MyReview></MyReview>}></Route>
-          <Route path="history" element={<MyHistory></MyHistory>}></Route>
-        </Route>
-        
-        
-        <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
-          <Route index element={<MyAppointments></MyAppointments>}></Route>
-          <Route path="review" element={<MyReview></MyReview>}></Route>
-          <Route path="history" element={<MyHistory></MyHistory>}></Route>
-          <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
-          <Route path="addDoctor" element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>}></Route>
-          <Route path="manageDoctor" element={<RequireAdmin><ManageDoctors></ManageDoctors></RequireAdmin>}></Route>
-        </Route>
-        
-        
-        
-        
-        */

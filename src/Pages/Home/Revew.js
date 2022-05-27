@@ -10,19 +10,19 @@ const Revew = () => {
             id: 1,
             name: "Rawdi Rattur",
             about: "I a very setisfy servive quality is awesome and outstanding product",
-            image: `${img1}`,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIbfDzNPtnPQF6u02N9c4z9QvRUPlIFGu91A&usqp=CAU",
         },
         {
             id: 2,
             name: "Petter",
             about: "Service quality is setisfy me  awesome and outstanding product",
-            image: `${img2}`,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYH_VDaGfxQ_cPhkgDPyoxXJgnnKHzEw7kdg&usqp=CAU",
         },
         {
             id: 3,
             name: "Angey le",
             about: " Outstanding product and something spacial extra carrig setisfing all ",
-            image: `${img3}`,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTxm162UJ9zWAc5SneLPzsEJ6S6JhU-tU4g&usqp=CAU",
         },
 
     ]

@@ -8,6 +8,10 @@ const OrderModal = ({ order, setOrder }) => {
     const [user, loading, error] = useAuthState(auth);
     const [price, setPrice] = useState();
     const aquantity = parseFloat(balance);
+    if (price === undefined) {
+        const price = 100;
+        setPrice(price);
+    }
     const total = price * aquantity;
     const selectQuantity = e => {
         const Quantity = parseInt(e.target.value);
@@ -22,7 +26,6 @@ const OrderModal = ({ order, setOrder }) => {
         const clientquantity = event.target.tentacles.value;
         const address = event.target.adress.value;
         const phoneNumber = event.target.phone.value;
-        const price = total;
         fetch('http://localhost:5000/order', {
             method: 'POST',
             body: JSON.stringify({

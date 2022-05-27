@@ -6,12 +6,12 @@ const Deshboard = () => {
         <div className="drawer mt-5 rounded-md drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col ">
-                <label for="my-drawer-2" className="btn btn-sm btn-outline btn-goust absolute right-2 top-2 fixed-top lg:hidden">Deshboard</label>
+                <label htmlFor="my-drawer-2" className="btn btn-sm btn-outline btn-goust absolute right-2 top-2 fixed-top lg:hidden">Deshboard</label>
                 <Outlet></Outlet>
 
             </div>
             <div className="drawer-side">
-                <label for="my-drawer-2" className="drawer-overlay"></label>
+                <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-64 border-r-1 bg-slate-700 shadow-slate-300 text-base-content">
 
                     <li>
