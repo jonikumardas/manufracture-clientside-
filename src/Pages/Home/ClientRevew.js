@@ -4,8 +4,8 @@ const ClientRevew = ({ revew }) => {
     const { name, about, image } = revew;
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl">
-                <div className="avatar mx-auto">
+            <div style={{ boxShadow: "0px 4px 24px 1px rgba(0, 0, 0, 0.28)", backdropFilter: "blur(5px)" }} className="card shadow-xl">
+                <div className="avatar p-2 mx-auto">
                     <div className="w-24  rounded-full">
                         <img src={image} alt="" />
                     </div>

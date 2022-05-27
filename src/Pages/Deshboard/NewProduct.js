@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const Myrevew = () => {
+const NewProduct = () => {
     const [images, setImage] = useState("");
     const handleImage = e => {
         const image = e.target.files[0];
@@ -56,18 +56,20 @@ const Myrevew = () => {
             <form
                 onSubmit={handelesubmit}
                 className=' mx-5 p-2 shadow rounded'>
-                <p>Your name:</p>
-                <input type="text" name='name' placeholder="Your name" className="input input-bordered input-accent w-full max-w-xs" maxLength="20" required /> <br />
-                <p><label htmlFor="w3review">Write you review:</label></p>
-                <textarea id="w3review" className='w-50 p-2 rounded' name="textarea" rows="4" cols="40" maxLength="100" required /><br />
-                <p> Select review:</p>
-                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" min="1" max="5" name='revew' /><br />
-                <p>Image :</p>
+                <p>Product Name</p>
+                <input type="text" name='name' placeholder="product name" className="input input-bordered input-accent w-full max-w-xs" maxLength="20" required /> <br />
+                <p><label htmlFor="w3review">Write a description:</label></p>
+                <textarea id="w3review" className='w-50 p-2 rounded text-black ' name="textarea" defaultValue="Description :" rows="6" cols="40" maxLength="400" required /><br />
+                <p> Quantity :</p>
+                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" min="2000" max="5000" name='revew' required /><br />
+                <p> Price :</p>
+                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" required /><br />
+                <p>Product</p>
 
                 <input onChange={handleImage}
                     type="file"
                     name='fileName' placeholder="image"
-                    className="input  input-bordered input-accent py-1 w-full max-w-xs" maxLength="20"
+                    className="input  input-bordered input-accent py-1 w-full max-w-xs"
                     required /> <br />
 
                 <button type='submit' className="btn btn-outline btn-success py-3 my-2 btn-center">Submit</button>
@@ -76,5 +78,4 @@ const Myrevew = () => {
         </div>
     );
 };
-
-export default Myrevew;
+export default NewProduct;
