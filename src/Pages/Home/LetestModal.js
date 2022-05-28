@@ -4,15 +4,15 @@ import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 
 const LetestModal = ({ order, setOrder }) => {
-    const { name, balance, quantity } = order;
+    const { name, price, quantity } = order;
     const [user, loading, error] = useAuthState(auth);
-    const [price, setPrice] = useState();
-    const aquantity = parseFloat(balance);
-    if (price === undefined) {
+    const [tprice, setPrice] = useState();
+    const aquantity = parseFloat(price);
+    if (tprice === undefined) {
         const price = 100;
         setPrice(price);
     }
-    const total = price * aquantity;
+    const total = tprice * aquantity;
     const selectQuantity = e => {
         const Quantity = parseInt(e.target.value);
         setPrice(Quantity);
@@ -53,7 +53,7 @@ const LetestModal = ({ order, setOrder }) => {
                     <h3 className="font-bold text-lg pt-2 text-center">Order name:{name}</h3> <br />
                     <div className='text-2xl text-success text-center'>Total ammount:
                         {
-                            price ? <span className='font-bold '> $ {`${aquantity}` * `${price}`}</span> : '$ 2049'
+                            tprice ? <span className='font-bold '> $ {`${aquantity}` * `${tprice}`}</span> : '$ 2049'
                         }
 
                     </div>

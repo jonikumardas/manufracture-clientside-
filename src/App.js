@@ -15,6 +15,7 @@ import Myorder from "../src/Pages/Deshboard/Myorder"
 import Myrevew from "./Pages/Deshboard/Myrevew";
 import NewProduct from "./Pages/Deshboard/NewProduct";
 import Myportfolio from "./Pages/Myportfolio";
+import Allclient from "./Pages/Deshboard/Allclient";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
           <Route index element={<Myorders></Myorders>}></Route>
           <Route path="deshborad/orders" element={<Myorder></Myorder>}></Route>
           <Route path="deshborad/createadmin" element={<Myorders></Myorders>}></Route>
-          <Route path="deshborad/allClient" element={<Myorders></Myorders>}></Route>
+          <Route path="deshborad/allClient" element={<Allclient></Allclient>}></Route>
           <Route path="deshborad/addproduct" element={<NewProduct></NewProduct>}></Route>
           <Route path="deshborad/revews" element={<Myrevew></Myrevew>}></Route>
           <Route path="deshborad/history" element={<Myorder></Myorder>}></Route>

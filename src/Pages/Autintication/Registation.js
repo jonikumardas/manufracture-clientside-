@@ -8,6 +8,7 @@ import auth from '../../Firebase/Firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminHook from '../../PrivateAuth.js/AdminHook';
 
+
 const Registation = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,10 +22,13 @@ const Registation = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const [signInWithGithub, gituser, gitloading, giterror] = useSignInWithGithub(auth);
-    const [token] = AdminHook(user || guser || gituser)
+    const [token] = AdminHook(user || guser || gituser);
+    console.log(token);
+
     const navigate = useNavigate();
     const location = useLocation();
-    const [userall, loadingall, allerror] = useAuthState(auth);
+    const [userall] = useAuthState(auth);
+    // console.log(userall);
     let from = location.state?.from?.pathname || "/";
     const takemail = e => {
         setEmail(e.target.value);
@@ -54,6 +58,7 @@ const Registation = () => {
 
     }
     if (user || guser || gituser) {
+        navigate(from, { replace: true });
         return toast.success("Account created successful!");
 
     }
@@ -61,10 +66,9 @@ const Registation = () => {
     if (error || gerror || giterror) {
         return toast.error("somthing is wrong");
     }
-    if (token) {
-        return navigate(from, { replace: true });
-    }
-
+    //     if (userall) {
+    //         return navigate(from, { replace: true });
+    //    }
     return (
         <div>
             <div className="card sm:w-94 lg:w-96 bg-base-100 shadow-xl mx-auto mt-2 ">

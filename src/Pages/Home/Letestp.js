@@ -1,7 +1,10 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/Firebase.init';
 
 const Letestp = ({ pdts, setOrder }) => {
     const { name, title, quantity, description, image, price } = pdts;
+    const [user] = useAuthState(auth)
     return (
         <div>
             <div style={{ boxShadow: "0px 4px 24px 1px rgba(0, 0, 0, 0.28)", backdropFilter: "blur(5px)" }} className="card shadow-xl">
@@ -17,7 +20,7 @@ const Letestp = ({ pdts, setOrder }) => {
                     <div className="card-actions justify-end">
                         <label
                             htmlFor="ordermodal"
-                            disabled={quantity === 0}
+                            disabled={quantity === 0 || !user}
                             onClick={() => setOrder(pdts)}
                             className="btn btn-outline btn-success">Book Now
                         </label>

@@ -3,28 +3,46 @@ import React, { useEffect, useState } from 'react';
 const AdminHook = user => {
     const [token, setToken] = useState('');
     useEffect(() => {
-        const email = user?.user?.email;
-        const activeuser = email;
-        if (user) {
-            const url = `http://loaclhost:5000/user/${email}`
+        const userEmail = user?.user?.email;
+        const currentuser = { email: userEmail }
+        if (userEmail) {
+            const url = 'http://localhost:5000/email'
             fetch(url, {
-                method: "PUT",
+                method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringfy(activeuser)
+                body: JSON.stringify(currentuser),
             })
-                .then(res => res.json())
+                .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    console.log('Success:', data);
                 })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         }
-
-
-
     }, [user])
     return [token]
-
 };
 
 export default AdminHook;
+
+
+
+// if (userEmail) {
+//     const url = `http://localhost:5000/user${userEmail}`
+//     fetch(url, {
+//         method: "PUT",
+//         headers: {
+//             'content-type': 'application/json'
+//         },
+//         body: JSON.stringify(currentuser)
+//     })
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log(data)
+//         })
+// }
+// }, [user])
+// return [token]
