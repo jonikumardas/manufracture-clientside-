@@ -3,16 +3,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 
-const OrderModal = ({ order, setOrder }) => {
-    const { name, price, quantity } = order;
+const LetestModal = ({ order, setOrder }) => {
+    const { name, balance, quantity } = order;
     const [user, loading, error] = useAuthState(auth);
-    const [tprice, setPrice] = useState();
-    const aquantity = parseFloat(price);
-    if (tprice === undefined) {
+    const [price, setPrice] = useState();
+    const aquantity = parseFloat(balance);
+    if (price === undefined) {
         const price = 100;
         setPrice(price);
     }
-    const total = tprice * aquantity;
+    const total = price * aquantity;
     const selectQuantity = e => {
         const Quantity = parseInt(e.target.value);
         setPrice(Quantity);
@@ -53,7 +53,7 @@ const OrderModal = ({ order, setOrder }) => {
                     <h3 className="font-bold text-lg pt-2 text-center">Order name:{name}</h3> <br />
                     <div className='text-2xl text-success text-center'>Total ammount:
                         {
-                            tprice ? <span className='font-bold '> $ {`${aquantity}` * `${tprice}`}</span> : '$ 2049'
+                            price ? <span className='font-bold '> $ {`${aquantity}` * `${price}`}</span> : '$ 2049'
                         }
 
                     </div>
@@ -79,4 +79,4 @@ const OrderModal = ({ order, setOrder }) => {
     );
 };
 
-export default OrderModal;
+export default LetestModal;

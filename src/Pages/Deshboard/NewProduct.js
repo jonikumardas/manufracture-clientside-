@@ -15,8 +15,8 @@ const NewProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                if (result) {
-                    toast("Data is success");
+                if (result.data.display_url) {
+                    toast("Image upload successfull");
                     setImage(result.data.display_url);
                 }
                 else {
@@ -29,15 +29,19 @@ const NewProduct = () => {
         const name = e.target.name.value;
         const textarea = e.target.textarea.value;
         const revew = e.target.revew.value;
+        const price = e.target.price.value;
+        const title = e.target.title.value;
         const handleImage = e.target.fileName.value;
         console.log(name, textarea, revew, handleImage);
-        fetch('http://localhost:5000/review', {
+        fetch('http://localhost:5000/newproduct', {
             method: 'POST',
             body: JSON.stringify({
                 name: name,
-                textarea: textarea,
-                revew: revew,
-                image: images
+                title: title,
+                description: textarea,
+                quantity: revew,
+                price: price,
+                image: images,
             }),
             headers: {
                 'Content-type': 'application/json',
@@ -46,7 +50,7 @@ const NewProduct = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
-                    toast.success("review success !!")
+                    toast.success("add product successfully !!")
                     e.target.reset();
                 }
             });
@@ -58,12 +62,14 @@ const NewProduct = () => {
                 className=' mx-5 p-2 shadow rounded'>
                 <p>Product Name</p>
                 <input type="text" name='name' placeholder="product name" className="input input-bordered input-accent w-full max-w-xs" maxLength="20" required /> <br />
+                <p>Product title</p>
+                <input type="text" name='title' placeholder="product name" className="input input-bordered input-accent w-full max-w-xs" maxLength="120" required /> <br />
                 <p><label htmlFor="w3review">Write a description:</label></p>
-                <textarea id="w3review" className='w-50 p-2 rounded text-black ' name="textarea" defaultValue="Description :" rows="6" cols="40" maxLength="400" required /><br />
+                <textarea id="w3review" className='w-50 p-2 rounded text-black ' name="textarea" placeholder='write a meaningful description ' rows="6" cols="40" maxLength="400" required /><br />
                 <p> Quantity :</p>
-                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" min="2000" max="5000" name='revew' required /><br />
+                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" min="500" max="2000" name='revew' required /><br />
                 <p> Price :</p>
-                <input type="number" placeholder="select" className="input input-bordered input-accent w-full max-w-xs" required /><br />
+                <input type="number" placeholder="select" name="price" className="input input-bordered input-accent w-full max-w-xs" required /><br />
                 <p>Product</p>
 
                 <input onChange={handleImage}

@@ -6,6 +6,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, u
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../Firebase/Firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
+import AdminHook from '../../PrivateAuth.js/AdminHook';
 
 const Registation = () => {
     const [email, setEmail] = useState('');
@@ -20,14 +21,11 @@ const Registation = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
     const [signInWithGithub, gituser, gitloading, giterror] = useSignInWithGithub(auth);
+    const [token] = AdminHook(user || guser || gituser)
     const navigate = useNavigate();
     const location = useLocation();
     const [userall, loadingall, allerror] = useAuthState(auth);
     let from = location.state?.from?.pathname || "/";
-
-    // const takeName = e => {
-    //     setName(e.target.value)
-    // }
     const takemail = e => {
         setEmail(e.target.value);
     }
@@ -63,7 +61,7 @@ const Registation = () => {
     if (error || gerror || giterror) {
         return toast.error("somthing is wrong");
     }
-    if (userall) {
+    if (token) {
         return navigate(from, { replace: true });
     }
 

@@ -30,6 +30,7 @@ const Navber = () => {
                         <li><NavLink to='/order' >Order</NavLink ></li>
                         <li><NavLink to='/payment'>Payment</NavLink ></li>
                         <li><NavLink to='/blog'>Blog</NavLink ></li>
+                        <li><NavLink to='/myportfolio'>Myportfolio</NavLink ></li>
 
                         {
                             user ?
@@ -55,6 +56,8 @@ const Navber = () => {
                     <li><NavLink to='/order' >Order</NavLink ></li>
                     <li><NavLink to='/payment' >Payment</NavLink ></li>
                     <li><NavLink to='/blog' >Blog</NavLink ></li>
+                    <li><NavLink to='/myportfolio'>Myportfolio</NavLink ></li>
+
                     {
                         user ?
                             <li><NavLink to='/logIn' onClick={logOut}>SignOut</NavLink ></li> :

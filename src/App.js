@@ -14,6 +14,7 @@ import RequerAuth from "./PrivateAuth.js/RequerAuth";
 import Myorder from "../src/Pages/Deshboard/Myorder"
 import Myrevew from "./Pages/Deshboard/Myrevew";
 import NewProduct from "./Pages/Deshboard/NewProduct";
+import Myportfolio from "./Pages/Myportfolio";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
 
 
         {<Route path="/blog" element={<Blog></Blog>}></Route>}
+        {<Route path="/myportfolio" element={<Myportfolio></Myportfolio>}></Route>}
 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route>
         <Route path='/registation' element={<Registation></Registation>}></Route>

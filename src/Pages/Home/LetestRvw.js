@@ -4,8 +4,8 @@ const LetestRvw = ({ revews }) => {
     const { name, textarea, revew, image } = revews;
     return (
         <div style={{ boxShadow: "0px 4px 24px 1px rgba(0, 0, 0, 0.28)", backdropFilter: "blur(5px)" }} className="card shadow-xl">
-            <div class="avatar mx-auto p-2">
-                <div class="w-24 rounded-full">
+            <div className="avatar mx-auto p-2">
+                <div className="w-24 rounded-full">
                     {
                         revews.image ? <img src={image} alt='' />
                             : <img src={img} alt=''></img>

@@ -1,9 +1,5 @@
 import React from 'react';
 import ClientRevew from './ClientRevew';
-import img1 from '../../assats/revew/autor1.jpg';
-import img2 from '../../assats/revew/autor2.jpg';
-import img3 from '../../assats/revew/author3.jpg';
-
 const Revew = () => {
     const revews = [
         {
