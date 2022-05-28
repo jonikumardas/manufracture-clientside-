@@ -26,7 +26,7 @@ const Deshboard = () => {
                     <li><Link to="deshborad/createadmin" >Create admin</Link ></li>
                     <li><Link to="deshborad/allClient"> All client </Link ></li>
                     <li><Link to="deshborad/addproduct" >Add product</Link ></li>
-                    <li><Link to="deshborad/revews" >My revews</Link ></li>
+                    <li><Link to="deshborad/revews" >Add review</Link ></li>
                     <li><Link to="deshborad/history" >History</Link ></li>
                 </ul>
 
