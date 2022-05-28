@@ -26,7 +26,7 @@ const LetestModal = ({ order, setOrder }) => {
         const clientquantity = event.target.tentacles.value;
         const address = event.target.adress.value;
         const phoneNumber = event.target.phone.value;
-        fetch('http://localhost:5000/order', {
+        fetch('https://ancient-scrubland-61244.herokuapp.com/order', {
             method: 'POST',
             body: JSON.stringify({
                 name: name, user: client, email: email, phone: phoneNumber, address: address, quantity: clientquantity, price: total

@@ -6,7 +6,7 @@ const AdminHook = user => {
         const userEmail = user?.user?.email;
         const currentuser = { email: userEmail }
         if (userEmail) {
-            const url = 'http://localhost:5000/email'
+            const url = 'https://ancient-scrubland-61244.herokuapp.com/email'
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -31,7 +31,7 @@ export default AdminHook;
 
 
 // if (userEmail) {
-//     const url = `http://localhost:5000/user${userEmail}`
+//     const url = `https://ancient-scrubland-61244.herokuapp.com/user${userEmail}`
 //     fetch(url, {
 //         method: "PUT",
 //         headers: {

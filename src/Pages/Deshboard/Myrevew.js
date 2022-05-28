@@ -31,7 +31,7 @@ const Myrevew = () => {
         const revew = e.target.revew.value;
         const handleImage = e.target.fileName.value;
         console.log(name, textarea, revew, handleImage);
-        fetch('http://localhost:5000/review', {
+        fetch('https://ancient-scrubland-61244.herokuapp.com/review', {
             method: 'POST',
             body: JSON.stringify({
                 name: name,

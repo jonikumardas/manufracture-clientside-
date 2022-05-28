@@ -66,9 +66,7 @@ const Registation = () => {
     if (error || gerror || giterror) {
         return toast.error("somthing is wrong");
     }
-    //     if (userall) {
-    //         return navigate(from, { replace: true });
-    //    }
+
     return (
         <div>
             <div className="card sm:w-94 lg:w-96 bg-base-100 shadow-xl mx-auto mt-2 ">

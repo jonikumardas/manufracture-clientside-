@@ -23,11 +23,12 @@ const Deshboard = () => {
                         <p className='font-bold text-success'>My Profile </p>
                     </li>
                     <li><Link to="deshborad/orders" >My order</Link ></li>
-                    <li><Link to="deshborad/createadmin" >Create admin</Link ></li>
-                    <li><Link to="deshborad/allClient"> All client </Link ></li>
                     <li><Link to="deshborad/addproduct" >Add product</Link ></li>
                     <li><Link to="deshborad/revews" >Add review</Link ></li>
                     <li><Link to="deshborad/history" >History</Link ></li>
+                    <li><Link to="deshborad/createadmin" >Create admin</Link ></li>
+                    <li><Link to="deshborad/allClient"> All client </Link ></li>
+
                 </ul>
 
             </div>

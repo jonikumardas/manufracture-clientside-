@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const LetestHook = () => {
     const [Newprodts, setNewprods] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/newproduct')
+        fetch('https://ancient-scrubland-61244.herokuapp.com/newproduct')
             .then(res => res.json())
             .then(data => setNewprods(data))
     })

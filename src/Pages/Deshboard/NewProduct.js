@@ -33,7 +33,7 @@ const NewProduct = () => {
         const title = e.target.title.value;
         const handleImage = e.target.fileName.value;
         console.log(name, textarea, revew, handleImage);
-        fetch('http://localhost:5000/newproduct', {
+        fetch('https://ancient-scrubland-61244.herokuapp.com/newproduct', {
             method: 'POST',
             body: JSON.stringify({
                 name: name,

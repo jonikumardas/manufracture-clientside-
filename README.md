@@ -2,6 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+  here is my we site live link [Website live link] (https://manufacturer-website-4b4d2.web.app/).
+
+
+ # Assignment task description here .
+ * if anybody not registered service button stay disable 
+ * home page design 
+ * route firebase, navber, service ,order, payment 
+ * log in and registation page has created 
+ * blog section has done 
+ * authintication has done && navigate to another location route where a user want to enter 
+ * Client site 16+ commit 
+ * server site 13+ commit
+ * footer sectionon has done 
+ * 2 extra section has done 
+ * deshboad has done 
+ * done another extra section 
+  
+ ** Note: stripe is very painful I have tryed 12 times but suddenly it crash window. so I avoide It.
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

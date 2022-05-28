@@ -25,6 +25,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/services' element={<Services></Services>}></Route>
+        <Route path='/payment' element={<h1>This is payment </h1>}></Route>
 
         <Route path='/order' element={<RequerAuth>
           <Orders></Orders>

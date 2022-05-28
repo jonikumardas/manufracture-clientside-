@@ -1,20 +1,14 @@
 import React from 'react';
+import HooksEmail from '../../Firebase/HooksEmail';
 
-const ClientEmail = ({ clientEma }) => {
-    console.log(clientEma)
-    const { _id, email } = clientEma;
+const ClientEmail = ({ client }) => {
+    const { _id, email } = client;
+
+
     return (
-        <>
-            <tbody>
+        <div>
 
-                <tr>
-                    <th>1</th>
-                    <td>{email}</td>
-                    <td><button className='btn btn-success btn-outline'>delate</button></td>
-                    <td><button className='btn btn-success btn-outline'>make admin</button> </td>
-                </tr>
-            </tbody>
-        </>
+        </div>
 
     );
 };
